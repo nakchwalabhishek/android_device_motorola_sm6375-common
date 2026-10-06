@@ -3,6 +3,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Platform
+#
+# TARGET_BOARD_PLATFORM must be defined in a PRODUCT makefile: the AOSPA QTI
+# common (device/qcom/common/common.mk, inherited from aospa-target.mk) reads it
+# as a product variable and errors out if it is only set in BoardConfig.
+TARGET_BOARD_PLATFORM := holi
+
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
