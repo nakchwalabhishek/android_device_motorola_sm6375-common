@@ -328,12 +328,16 @@ TARGET_COMMON_QTI_COMPONENTS := \
     audio \
     av \
     bt \
+    charging \
     display \
+    dsprpcd \
     gps \
     init \
+    keymaster \
     media \
     overlay \
     perf \
+    qseecomd \
     telephony \
     usb \
     vibrator \
