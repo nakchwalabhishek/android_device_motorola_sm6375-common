@@ -331,7 +331,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     charging \
     display \
     dsprpcd \
-    gps \
     init \
     keymaster \
     media \
