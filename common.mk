@@ -345,3 +345,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/sm6375-common/sm6375-common-vendor.mk)
+
+# AOSPA's device/qcom/common ships a generic ueventd.qcom.rc installed as
+# vendor/etc/ueventd.rc. The device-specific Motorola ueventd.rc is installed
+# via PRODUCT_COPY_FILES below, so drop the generic package (duplicate target).
+PRODUCT_PACKAGES := $(filter-out ueventd.qcom.rc,$(PRODUCT_PACKAGES))
