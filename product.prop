@@ -1,0 +1,8 @@
+# eBPF
+ro.bpf.kver_override=5.10.239
+
+# IMS
+ro.qcom.ims.use_moto_vt_ext=true
+
+# System server
+arm64.memtag.process.system_server=off
