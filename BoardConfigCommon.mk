@@ -108,8 +108,11 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 # (device/qcom/vendor-common/compatibility_matrix.xml +
 # vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml),
 # so the Lineage hardware/qcom-caf/common matrices are dropped.
+#
+# The Motorola framework matrix is vendored in the device tree: AOSPA's
+# hardware/motorola tree does not ship a vintf/ directory.
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    hardware/motorola/vintf/device_framework_matrix.xml
+    $(COMMON_PATH)/vintf/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 
 # Metadata
@@ -153,7 +156,8 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-include hardware/motorola/sepolicy/qti/SEPolicy.mk
+# Motorola QTI policy is vendored in $(COMMON_PATH)/sepolicy/motorola.
+include $(COMMON_PATH)/sepolicy/motorola/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # Verified Boot
